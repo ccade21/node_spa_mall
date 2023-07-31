@@ -1,0 +1,43 @@
+const express = require('express');
+const router = express.Router();
+
+// 댓글 목록 조회 API
+router.get('/comments', (req, res) => {
+  // 댓글 목록 조회 로직
+  // ...
+
+  res.json({ comments: [] }); // 예시로 빈 배열을 응답으로 보냅니다.
+});
+
+// 댓글 작성 API
+router.post('/comments', (req, res) => {
+  const { text, postId } = req.body;
+
+  // 댓글 작성 로직
+  // ...
+
+  res.json({ success: true, message: '댓글이 작성되었습니다.' });
+});
+
+// 댓글 수정 API
+router.put('/comments/:commentId', (req, res) => {
+  const { commentId } = req.params;
+  const { text } = req.body;
+
+  // 댓글 수정 로직
+  // ...
+
+  res.json({ success: true, message: '댓글이 수정되었습니다.' });
+});
+
+// 댓글 삭제 API
+router.delete('/comments/:commentId', (req, res) => {
+  const { commentId } = req.params;
+
+  // 댓글 삭제 로직
+  // ...
+
+  res.json({ success: true, message: '댓글이 삭제되었습니다.' });
+});
+
+module.exports = router;
